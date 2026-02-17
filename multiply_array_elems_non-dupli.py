@@ -1,0 +1,34 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Dec 12 12:23:02 2025
+
+@author: INAKUSHW
+"""
+
+#Brute force )(n^2)
+num = [1,2,3,4]
+
+res = [1]*len(num)
+
+for i in range(len(num)):
+    for j in range(len(num)):
+        if (i!=j):
+            res[i]=res[i]*num[j]
+            
+            
+#O(n)
+
+num = [1,2,3,4]
+res = [1]*len(num)
+
+prefix = 1
+for i in range(len(num)):
+    res[i] = prefix
+    prefix *= num[i]
+    
+suffix = 1
+for i in range(len(num)-1,-1,-1):
+    res[i] *= suffix
+    suffix *= num[i]
+    
+    
